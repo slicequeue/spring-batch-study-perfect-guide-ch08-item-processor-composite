@@ -11,6 +11,7 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.job.DefaultJobParametersValidator;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.adapter.ItemProcessorAdapter;
 import org.springframework.batch.item.file.FlatFileItemReader;
@@ -135,6 +136,7 @@ public class CompositeItemProcessorJob {
 
         return this.jobBuilderFactory.get("job-item-processor-composite")
                 .validator(jobParametersValidator())
+                .incrementer(new RunIdIncrementer())
                 .start(copyFileStep())
                 .build();
     }
