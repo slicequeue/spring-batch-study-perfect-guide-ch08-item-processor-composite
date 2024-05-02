@@ -1,10 +1,9 @@
-package com.slicequeue.springboot.batch;
+package com.slicequeue.springboot.batch.prev_job;
 
 import com.slicequeue.springboot.batch.domain.Customer;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParametersValidator;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
@@ -17,7 +16,6 @@ import org.springframework.batch.item.support.ScriptItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 
@@ -25,8 +23,8 @@ import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 import java.util.List;
 
-@EnableBatchProcessing
-@SpringBootApplication
+//@EnableBatchProcessing
+//@SpringBootApplication
 public class ScriptItemProcessorJob {
 
     @Autowired
